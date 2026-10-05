@@ -58,7 +58,6 @@ int main()
     CloseHandle(hMinMax);
     CloseHandle(hAverage);
 
-    // доп. задание: подключаем DLL ровно здесь, вызываем и сразу отключаем
     HMODULE hLib = LoadLibraryA("ArrayLib.dll");
     ReplaceFunc replace = (ReplaceFunc)GetProcAddress(hLib, "ReplaceMinMax");
     replace(d.arr, d.n, (int)d.avg);
